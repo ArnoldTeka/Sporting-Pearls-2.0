@@ -426,48 +426,90 @@ a:focus {
 /* end slider section */
 
 // about section
-
 .about_section {
-  color: $white;
-
-  .heading_container {
-    h2 {
+  .detail-box {
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 2rem;
       color: $white;
+      position: relative;
+      padding-bottom: 0.5rem;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: $primary;
+      }
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 1.5rem 0 0.5rem;
+      color: lighten($primary, 20%);
+    }
+
+    .values-list {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: rgba($black, 0.2);
+      border-radius: 10px;
+
+      ul {
+        list-style: none;
+        padding-left: 1.5rem;
+        
+        li {
+          position: relative;
+          margin-bottom: 0.8rem;
+          padding-left: 1.5rem;
+          
+          &::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: $primary;
+            font-size: 1.4rem;
+            line-height: 1;
+          }
+        }
+      }
+
+      p {
+        line-height: 1.7;
+        margin: 1rem 0;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 1.2rem 0;
+      color: rgba($white, 0.9);
     }
   }
 
-  .about_container {
-    padding: 45px;
-    background-image: url(../images/about-bg.jpg);
-    background-size: cover;
-
+  @media (max-width: 768px) {
     .detail-box {
-      display: flex;
-      flex-direction: column;
-
+      h3 {
+        font-size: 1.5rem;
+      }
+      
+      h4 {
+        font-size: 1.2rem;
+      }
+      
       p {
-        margin-top: 25px;
-      }
-
-      hr {
-        margin: 0 auto;
-        border: none;
-        width: 1.5px;
-        height: 125px;
-        background-color: $white;
-      }
-
-      a {
-        @include hero_btn($black, $white, 8px, 35px, 35px);
-        margin: 35px auto 0 auto;
-        box-shadow: 0 0 35px 0 rgba($color: #F4c430, $alpha: .7);
+        font-size: 0.95rem;
       }
     }
   }
 }
-
-// end about section
-
 // class section
 
 .class_section {
